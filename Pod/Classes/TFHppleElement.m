@@ -169,6 +169,9 @@ static NSString * const TFHppleTextNodeName            = @"text";
     {
         if ([child.tagName isEqualToString:tagName])
             return child;
+        TFHppleElement *element = [child firstChildWithTagName:tagName];
+        if (element)
+            return element;
     }
     
     return nil;
