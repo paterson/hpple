@@ -193,6 +193,7 @@ static NSString * const TFHppleTextNodeName            = @"text";
     {
         if ([[child objectForKey:@"class"] isEqualToString:className])
             return child;
+        [child firstChildWithClassName:className];
     }
     
     return nil;
