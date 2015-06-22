@@ -158,6 +158,8 @@ static NSString * const TFHppleTextNodeName            = @"text";
     {
         if ([child.tagName isEqualToString:tagName])
             [matches addObject:child];
+        NSArray *childMatches = [child childrenWithTagName:tagName];
+        [matches addObjectsFromArray:childMatches];
     }
     
     return matches;
@@ -185,6 +187,8 @@ static NSString * const TFHppleTextNodeName            = @"text";
     {
         if ([[child objectForKey:@"class"] isEqualToString:className])
             [matches addObject:child];
+        NSArray *childMatches = [child childrenWithClassName:className];
+        [matches addObjectsFromArray:childMatches];
     }
     
     return matches;
